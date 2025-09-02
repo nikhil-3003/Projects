@@ -1,0 +1,27 @@
+<!-- Views/Books/Index.cshtml -->
+@model IEnumerable<Book>
+
+<h2>Books List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.Author.Name</td>
+                <td>@book.Genre.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@Html.Partial("_BookForm")
+<script src="~/js/script.js"></script>
